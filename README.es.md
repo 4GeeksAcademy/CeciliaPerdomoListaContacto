@@ -73,3 +73,13 @@ Sugerencia: comience con algún contenido ficticio en la tienda (store.js).
 Sugerencia: usa Postman para probar los puntos finales de la API antes de codificar.
 
 Este y otros proyectos son usados para [aprender a programar](https://4geeksacademy.com/es/aprender-a-programar/aprender-a-programar-desde-cero) por parte de los alumnos de 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) realizado por [Alejandro Sánchez](https://twitter.com/alesanchezr) y muchos otros contribuyentes. Conoce más sobre nuestros [Curso de Programación](https://4geeksacademy.com/es/curso-de-programacion-desde-cero?lang=es) para convertirte en [Full Stack Developer](https://4geeksacademy.com/es/coding-bootcamps/desarrollador-full-stack/?lang=es), o nuestro [Data Science Bootcamp](https://4geeksacademy.com/es/coding-bootcamps/curso-datascience-machine-learning).
+
+Si la planilla tiene problemas:
+En el package.json: "node-sass": "^7.0.1", (Cambiar uno por el otro)
+
+Luego en terminal:
+nvm install 14.16.1
+nvm use 14.16.1
+npm cache clean --force
+npm i 
+npm run start

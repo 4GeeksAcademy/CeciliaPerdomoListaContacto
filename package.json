@@ -12,17 +12,13 @@
 		"deploy": "node deploy-to-github.js"
 	},
 	"author": {
-		"name": "Alejandro Sanchez",
-		"url": "http://alesanchezr.com/"
+		"name": "Cecilia Perdomo",
+		"url": "https://ceciliaperdomo.vercel.app/"
 	},
 	"contributors": [
 		{
-			"name": "Alejandro Sanchez",
-			"url": "http://alesanchezr.com/"
-		},
-		{
-			"name": "Ignacio Cordoba",
-			"url": "http://github.com/nachovz"
+			"name": "Cecilia Perdomo",
+			"url": "https://ceciliaperdomo.vercel.app/"
 		}
 	],
 	"license": "ISC",
@@ -50,7 +46,7 @@
 		"html-webpack-plugin": "^3.2.0",
 		"kind-of": "^6.0.3",
 		"minimist": "^1.2.5",
-		"node-sass": "^4.13.1",
+		"node-sass": "^7.0.1",
 		"parse-github-url": "^1.0.2",
 		"prettier": "^1.19.1",
 		"prettier-webpack-plugin": "^1.2.0",
