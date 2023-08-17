@@ -1,6 +1,6 @@
 // Info: https://playground.4geeks.com/apis/fake/contact/
 
-const getState = ({ getStore, setStore }) => {
+const getState = ({ getStore, setStore, getActions }) => {
 	return {
 		store: {
 			//Your data structures, A.K.A Entities
