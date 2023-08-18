@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 
 import { ContactCard } from "../component/ContactCard.js";
 import { Modal } from "../component/Modal";
+import { ModalEdit } from "../component/ModalEdit.jsx";
 
 export const Contacts = () => {
 	const [state, setState] = useState({
@@ -41,6 +42,7 @@ export const Contacts = () => {
 								phone={item.phone}
 								email={item.email}
 								onDelete={() => setState({ showModal: true, id: item.id })}
+								onEdit={() => setEdit({ showModal: true, id: item.id })}
 							/>
 						))}
 					</ul>
