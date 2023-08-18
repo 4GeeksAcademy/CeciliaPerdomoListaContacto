@@ -50,6 +50,8 @@ export const Contacts = () => {
 			</div>
 			{/* Abre el modal para borrar el contacto */}
 			<Modal id={state.id} show={state.showModal} onClose={() => setState({ showModal: false })} />
+			{/* Abre el modal para editar */}
+			<ModalEdit id={edit.id} show={edit.showModal} onClose={() => setEdit({ showModal: false })} />
 		</div>
 	);
 };

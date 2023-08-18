@@ -28,7 +28,7 @@ export const ContactCard = props => {
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 					<div className=" float-right">
 						<button className="btn">
-							<i className="fas fa-pencil-alt mr-3" onClick={() => props.onEdit()}/>
+							<i className="fas fa-pencil-alt mr-3" onClick={() => props.onEdit()} />
 						</button>
 						<button className="btn" onClick={() => props.onDelete()}>
 							<i className="fas fa-trash-alt" />
@@ -73,8 +73,8 @@ ContactCard.propTypes = {
 	full_name: PropTypes.string,
 	address: PropTypes.string,
 	phone: PropTypes.string,
-	email: PropTypes.string, 
-	onEdit: PropTypes.func,
+	email: PropTypes.string,
+	onEdit: PropTypes.func
 };
 
 /**

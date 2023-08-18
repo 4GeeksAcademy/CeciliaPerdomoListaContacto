@@ -5,13 +5,85 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 
 export const ModalEdit = props => {
-
 	const { actions, store } = useContext(Context);
+	const [fullName, setFullName] = useState("");
+	const [email, setEmail] = useState("");
+	const [phone, setPhone] = useState("");
+	const [adress, setAdress] = useState("");
 
 	return (
-        <></>
-    )
-}
+		<>
+			<div
+				className="modal"
+				tabIndex="-1"
+				role="dialog"
+				style={{ display: props.show ? "inline-block" : "none" }}>
+				<div className="modal-dialog" role="document">
+					<div className="modal-content">
+						<div className="modal-header">
+							<h5 className="modal-title">Editar contacto</h5>
+							{props.onClose ? (
+								<button
+									onClick={() => props.onClose()}
+									type="button"
+									className="close"
+									data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							) : (
+								""
+							)}
+						</div>
+
+						<form>
+							<div className="modal-body">
+								<input
+									type="text"
+									name="name"
+									placeholder="Name"
+									value={fullName}
+									onChange={e => setFullName(e.target.value)}></input>
+
+								<input
+									type="text"
+									name="email"
+									placeholder="email"
+									value={email}
+									onChange={e => setEmail(e.target.value)}></input>
+								<input
+									type="text"
+									name="phone"
+									placeholder="phone"
+									value={phone}
+									onChange={e => setPhone(e.target.value)}></input>
+								<input
+									type="text"
+									name="adress"
+									placeholder="address"
+									value={adress}
+									onChange={e => setAdress(e.target.value)}></input>
+							</div>
+							<div className="modal-footer">
+								<button type="button" className="btn btn-primary">
+									Oh no!
+								</button>
+								<button
+									type="button"
+									className="btn btn-secondary"
+									data-dismiss="modal"
+									//onClick={() => actions.borrarContacto(props.id)}
+								>
+									Do it!
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</>
+	);
+};
 
 /**
  * Define the data-types for
