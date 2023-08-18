@@ -52,16 +52,17 @@ const getState = ({ getStore, setStore, getActions }) => {
 			},
 
 			borrarContacto: async id => {
+				console.log(id);
 				try {
-					const response = await fetch("https://playground.4geeks.com/apis/fake/contact/agenda/" + id, {
+					const response = await fetch("https://playground.4geeks.com/apis/fake/contact/" + id, {
 						method: "DELETE",
 						headers: { "Content-Type": "application/json" }
 					});
 					const data = await response.json();
-					console.log(data);
+					//console.log(data);
+					getActions().mostrarContactos("cecilia_perdomo");
 				} catch (error) {
-					console.error(error);
-					return false;
+					console.error("Error al borrar: ", error);
 				}
 			}
 		}
