@@ -13,57 +13,51 @@ export const ContactCard = props => {
 
 	const { actions, store } = useContext(Context);
 
-	useEffect(() => {
-		actions.mostrarContactos("cecilia_perdomo");
-	}, []);
-
 	return (
 		<li className="list-group-item">
-			{store.contactos.map((item, id) => (
-				<div className="row w-100" key={id}>
-					<div className="col-12 col-sm-6 col-md-3 px-0">
-						<img
-							src={MikePhoto}
-							alt="Contactos"
-							className="rounded-circle mx-auto d-block img-fluid"
-							style={{ width: "55%" }}
-						/>
-					</div>
-
-					<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
-						<div className=" float-right">
-							<button className="btn">
-								<i className="fas fa-pencil-alt mr-3" />
-							</button>
-							<button className="btn" onClick={() => props.onDelete()}>
-								<i className="fas fa-trash-alt" />
-							</button>
-						</div>
-						<label className="name lead">
-							<b>{item.full_name}</b>
-						</label>
-						<br />
-						<i className="fas fa-map-marker-alt text-muted mr-3" />
-						<span className="text-muted">{item.address}</span>
-						<br />
-						<span
-							className="fa fa-phone fa-fw text-muted mr-3"
-							data-toggle="tooltip"
-							title=""
-							data-original-title="(870) 288-4149"
-						/>
-						<span className="text-muted small">{item.phone}</span>
-						<br />
-						<span
-							className="fa fa-envelope fa-fw text-muted mr-3"
-							data-toggle="tooltip"
-							data-original-title=""
-							title=""
-						/>
-						<span className="text-muted small text-truncate">{item.email}</span>
-					</div>
+			<div className="row w-100">
+				<div className="col-12 col-sm-6 col-md-3 px-0">
+					<img
+						src={MikePhoto}
+						alt="Contactos"
+						className="rounded-circle mx-auto d-block img-fluid"
+						style={{ width: "55%" }}
+					/>
 				</div>
-			))}
+
+				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
+					<div className=" float-right">
+						<button className="btn">
+							<i className="fas fa-pencil-alt mr-3" />
+						</button>
+						<button className="btn" onClick={() => props.onDelete()}>
+							<i className="fas fa-trash-alt" />
+						</button>
+					</div>
+					<label className="name lead">
+						<b>{props.full_name}</b>
+					</label>
+					<br />
+					<i className="fas fa-map-marker-alt text-muted mr-3" />
+					<span className="text-muted">{props.address}</span>
+					<br />
+					<span
+						className="fa fa-phone fa-fw text-muted mr-3"
+						data-toggle="tooltip"
+						title=""
+						data-original-title="(870) 288-4149"
+					/>
+					<span className="text-muted small">{props.phone}</span>
+					<br />
+					<span
+						className="fa fa-envelope fa-fw text-muted mr-3"
+						data-toggle="tooltip"
+						data-original-title=""
+						title=""
+					/>
+					<span className="text-muted small text-truncate">{props.email}</span>
+				</div>
+			</div>
 		</li>
 	);
 };
@@ -74,7 +68,12 @@ export const ContactCard = props => {
  **/
 ContactCard.propTypes = {
 	history: PropTypes.object,
-	onDelete: PropTypes.func
+	onDelete: PropTypes.func,
+	id: PropTypes.string,
+	full_name: PropTypes.string,
+	address: PropTypes.string,
+	phone: PropTypes.string,
+	email: PropTypes.string
 };
 
 /**

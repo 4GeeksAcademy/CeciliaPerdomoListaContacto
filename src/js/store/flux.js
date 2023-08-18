@@ -49,6 +49,20 @@ const getState = ({ getStore, setStore, getActions }) => {
 					console.error(error);
 					return false;
 				}
+			},
+
+			borrarContacto: async id => {
+				try {
+					const response = await fetch("https://playground.4geeks.com/apis/fake/contact/agenda/" + id, {
+						method: "DELETE",
+						headers: { "Content-Type": "application/json" }
+					});
+					const data = await response.json();
+					console.log(data);
+				} catch (error) {
+					console.error(error);
+					return false;
+				}
 			}
 		}
 	};
